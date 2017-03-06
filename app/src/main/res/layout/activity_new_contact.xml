@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_new_contact"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lenovo.myfinalproject.NewContactActivity"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:id="@+id/imageView"
+        android:clickable="true"
+
+        android:layout_weight="0.01" />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name:"
+        android:id="@+id/edtName"
+        android:drawableRight="@android:drawable/ic_input_add"/>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Surname:"
+        android:id="@+id/edtSurname"
+        android:drawableRight="@android:drawable/ic_input_add"/>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tel:"
+        android:id="@+id/edtTel"
+        android:drawableRight="@android:drawable/ic_input_add"/>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email:"
+        android:id="@+id/edtEmail"
+        android:drawableRight="@android:drawable/ic_input_add"/>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtWork"
+        android:hint="Work adress"
+        android:drawableRight="@android:drawable/ic_input_add"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="38dp"
+        android:text="add"
+        android:id="@+id/btnAddNewContact"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp"
+        android:textColor="#6E77F0"
+        android:background="@drawable/button_background" />
+
+
+</LinearLayout>

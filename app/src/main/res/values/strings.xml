@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyFinalProject</string>
+    <string name="exit">Exit</string>
+    <string name="open">Open</string>
+    <string name="notebook">Notebook</string>
+    <string name="title_activity_new_contact">NewContactActivity</string>
+    <string name="text_activity1">Это первое Activity</string>
+    <string name="text_activity2">Это второе Activity</string>
+    <string name="title_activity_list">ListActivity</string>
+    <string name="add_a_new_contact">Add a new contact</string>
+    <string name="upgrade">upgrade</string>
+    <string name="del">delete</string>
+    <string name="update">update</string>
+</resources>
