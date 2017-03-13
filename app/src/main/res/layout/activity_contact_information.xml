@@ -74,13 +74,15 @@
             android:hint="Work adress"
             android:drawableRight="@android:drawable/button_onoff_indicator_on"/>
 
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_alignParentBottom="true">
 
         <ImageButton
 
@@ -89,12 +91,11 @@
             android:layout_weight="1"
             android:src="@android:drawable/sym_call_outgoing"
             android:id="@+id/imagebtn"
-            android:layout_marginTop="150sp"/>
+            />
 
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="150sp"
             android:layout_weight="1"
             android:id="@+id/imagemail"
             android:src="@android:drawable/ic_dialog_email"/>
@@ -103,10 +104,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@android:drawable/ic_menu_mapmode"
-            android:layout_marginTop="150sp"
             android:id="@+id/imageMaps"/>
 
     </LinearLayout>
+
+
+
+</RelativeLayout>
 
 
 

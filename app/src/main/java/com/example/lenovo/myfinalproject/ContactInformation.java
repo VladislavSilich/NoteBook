@@ -17,7 +17,6 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,7 +37,7 @@ public class ContactInformation extends Activity {
     Geocoder geocoder;
 
     final int DILOG_DELETE = 1;
-    public  final String TAG = "myLogs";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,25 +137,29 @@ public class ContactInformation extends Activity {
         btnMaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG,"Button");
-               String addressWork = adressInf.getText().toString();
-                try {
-                    List<Address> list = geocoder.getFromLocationName(addressWork,5);
-                    int size = list.size();
-                    if (size == 0){
-                        Toast.makeText(ContactInformation.this,"No results.Enter new place.",Toast.LENGTH_LONG).show();
-                    }
-                    else {
-                           double latitude = list.get(0).getLatitude();
-                           double longitude = list.get(0).getLongitude();
+                boolean enabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+                if (enabled == true) {
+                    String addressWork = adressInf.getText().toString();
+                    try {
+                        List<Address> list = geocoder.getFromLocationName(addressWork, 5);
+                        int size = list.size();
+                        if (size == 0) {
+                            Toast.makeText(ContactInformation.this, "No results.Enter new place.", Toast.LENGTH_LONG).show();
+                        } else {
+                            double latitude = list.get(0).getLatitude();
+                            double longitude = list.get(0).getLongitude();
 
-                        Uri uri = Uri.parse(String.format("geo:%f,%f",latitude,longitude));
-                        Intent intent = new Intent(Intent.ACTION_VIEW,uri);
-                        startActivity(intent);
+                            Uri uri = Uri.parse(String.format("geo:%f,%f", latitude, longitude));
+                            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                            startActivity(intent);
 
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                }
+                else {
+                    Toast.makeText(ContactInformation.this,"Please,enable GPS.",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -189,10 +192,11 @@ public class ContactInformation extends Activity {
 
         }
     };
-
     public void returnHome() {
         Intent home_intent = new Intent(getApplicationContext(),
                 ListContactsActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(home_intent);
     }
+
+
 }
