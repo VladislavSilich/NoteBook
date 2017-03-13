@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="104dp"
         android:id="@+id/textView2"
-        android:textSize="30sp"
+        android:textSize="60sp"
         android:layout_gravity="center"
         android:gravity="center"
 
@@ -37,26 +37,29 @@
             android:background="@drawable/imageview_background"/>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
+
             <Button
-                android:text="Exit"
-                android:layout_width="fill_parent"
-                android:layout_height="60dp"
-                android:id="@+id/btnExit"
-                android:layout_marginTop="20sp"
+                android:text="Open"
+                android:layout_width="200sp"
+                android:layout_height="58dp"
+                android:id="@+id/btnOpen"
+                android:layout_gravity="center"
+                android:layout_marginTop="40sp"
                 android:layout_weight="1"
                 android:textColor="#6E77F0"
                 android:background="@drawable/button_background"/>
 
             <Button
-                android:text="Open"
-                android:layout_width="fill_parent"
-                android:layout_height="58dp"
-                android:id="@+id/btnOpen"
-                android:layout_marginTop="20sp"
+                android:text="Exit"
+                android:layout_width="200sp"
+                android:layout_height="60dp"
+                android:id="@+id/btnExit"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:textColor="#6E77F0"
                 android:background="@drawable/button_background"/>

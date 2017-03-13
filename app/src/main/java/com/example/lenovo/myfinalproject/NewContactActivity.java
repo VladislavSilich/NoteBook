@@ -47,7 +47,7 @@ public class NewContactActivity extends AppCompatActivity {
                 String tel = edtTelephone.getText().toString();
                 String email = edtEmail.getText().toString();
                 String adress = edtAdress.getText().toString();
-                if(name.isEmpty() && surname.isEmpty() && tel.isEmpty() && email.isEmpty() && adress.isEmpty()){
+                if(name.isEmpty() && surname.isEmpty()){
                     showDialog(DIALOG_SHOW);
                 }else {
                     dbcon.insertData(name, surname, tel, email,adress);
@@ -65,7 +65,7 @@ public class NewContactActivity extends AppCompatActivity {
         protected Dialog onCreateDialog (int id){
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.setTitle("Warning");
-            dialog.setMessage("Please, fill at least one field");
+            dialog.setMessage("Please, fill at least Name or Surname.");
             dialog.setIcon(android.R.drawable.stat_sys_warning);
             dialog.setPositiveButton("Ok",myClickListener);
             return dialog.create();

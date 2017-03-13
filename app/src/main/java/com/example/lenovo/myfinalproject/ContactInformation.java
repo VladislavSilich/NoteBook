@@ -17,6 +17,7 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +38,7 @@ public class ContactInformation extends Activity {
     Geocoder geocoder;
 
     final int DILOG_DELETE = 1;
-
+    public  final String TAG = "myLogs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,10 +101,9 @@ public class ContactInformation extends Activity {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
                 intent.setData(Uri.parse("tel:" + tel));
                 startActivity(intent);
-
-
             }
         });
+
         controller = new SQLController(this);
         controller.open();
 
@@ -138,6 +138,7 @@ public class ContactInformation extends Activity {
         btnMaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(TAG,"Button");
                String addressWork = adressInf.getText().toString();
                 try {
                     List<Address> list = geocoder.getFromLocationName(addressWork,5);
@@ -145,9 +146,7 @@ public class ContactInformation extends Activity {
                     if (size == 0){
                         Toast.makeText(ContactInformation.this,"No results.Enter new place.",Toast.LENGTH_LONG).show();
                     }
-
                     else {
-
                            double latitude = list.get(0).getLatitude();
                            double longitude = list.get(0).getLongitude();
 
